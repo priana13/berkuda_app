@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminTransaksiController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminJadwalController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,42 +25,28 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "transaksi";
+			$this->table = "jadwal";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Pelanggan","name"=>"user_id","join"=>"cms_users,name"];
-			$this->col[] = ["label"=>"Kode Transaksi","name"=>"kode_transaksi"];
-			$this->col[] = ["label"=>"Produk Id","name"=>"produk_id","join"=>"produk,nama_produk"];
-			$this->col[] = ["label"=>"Status Transaksi","name"=>"status_transaksi"];
-			$this->col[] = ["label"=>"Disount","name"=>"disount"];
-			$this->col[] = ["label"=>"Total","name"=>"total"];
-			$this->col[] = ["label"=>"Bukti Pembayaran","name"=>"bukti_pembayaran"];
+			$this->col[] = ["label"=>"Transaksi Id","name"=>"transaksi_id","join"=>"transaksi,id"];
+			$this->col[] = ["label"=>"Petugas Id","name"=>"petugas_id","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Kuda Id","name"=>"kuda_id","join"=>"kuda,nama_kuda"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Pelanggan','name'=>'user_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','datatable'=>'cms_users,name'];
-			$this->form[] = ['label'=>'Produk','name'=>'produk_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'produk,nama_produk'];
-			$this->form[] = ['label'=>'Qty','name'=>'qty','type'=>'number','validation'=>'required|min:1|max:255','width'=>'col-sm-2'];
-
-			$this->form[] = ['label'=>'Disount','name'=>'disount','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-2'];
-			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-3'];
-			$this->form[] = ['label'=>'Status Transaksi','name'=>'status_transaksi','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','dataenum' => 'Pending;Selesai;Batal'];
-
-			$this->form[] = ['label'=>'Bukti Pembayaran','name'=>'bukti_pembayaran','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Transaksi Id','name'=>'transaksi_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'transaksi,id'];
+			$this->form[] = ['label'=>'Petugas Id','name'=>'petugas_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'petugas,id'];
+			$this->form[] = ['label'=>'Kuda Id','name'=>'kuda_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'kuda,nama_kuda'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"User Id","name"=>"user_id","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"user,id"];
-			//$this->form[] = ["label"=>"Kode Transaksi","name"=>"kode_transaksi","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Produk Id","name"=>"produk_id","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"produk,nama_produk"];
-			//$this->form[] = ["label"=>"Status Transaksi","name"=>"status_transaksi","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Disount","name"=>"disount","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Total","name"=>"total","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Bukti Pembayaran","name"=>"bukti_pembayaran","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Transaksi Id","name"=>"transaksi_id","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"transaksi,id"];
+			//$this->form[] = ["label"=>"Petugas Id","name"=>"petugas_id","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"petugas,id"];
+			//$this->form[] = ["label"=>"Kuda Id","name"=>"kuda_id","type"=>"select2","required"=>TRUE,"validation"=>"required|min:1|max:255","datatable"=>"kuda,nama_kuda"];
 			# OLD END FORM
 
 			/* 
@@ -269,7 +255,7 @@
 	    |
 	    */
 	    public function hook_before_add(&$postdata) {        
-	        $postdata['kode_transaksi'] = uniqid();
+	        //Your code here
 
 	    }
 
