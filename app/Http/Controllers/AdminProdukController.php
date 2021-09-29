@@ -33,7 +33,7 @@
 			$this->col[] = ["label"=>"Nama Produk","name"=>"nama_produk"];
 			$this->col[] = ["label"=>"Harga","name"=>"harga"];
 			$this->col[] = ["label"=>"Deskripsi","name"=>"deskripsi"];
-			$this->col[] = ["label"=>"Nama Paket","name"=>"nama_paket"];
+			$this->col[] = ["label"=>"Nama Paket","name"=>"paket_id",'join'=>'paket,nama'];
 			$this->col[] = ["label"=>"Qty Pertemuan","name"=>"qty_pertemuan"];
 			$this->col[] = ["label"=>"Type","name"=>"type"];
 			$this->col[] = ["label"=>"Image","name"=>"image","image"=>true];
@@ -44,7 +44,7 @@
 			$this->form[] = ['label'=>'Nama Produk','name'=>'nama_produk','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Deskripsi','name'=>'deskripsi','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Nama Paket','name'=>'nama_paket','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nama Paket','name'=>'paket_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=> 'paket,nama'];
 			$this->form[] = ['label'=>'Qty Pertemuan','name'=>'qty_pertemuan','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Type','name'=>'type','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];

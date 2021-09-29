@@ -35,7 +35,7 @@
 			$this->col[] = ["label"=>"Jenis Kuda","name"=>"jenis_kuda"];
 			$this->col[] = ["label"=>"Deskripsi","name"=>"deskripsi"];
 			$this->col[] = ["label"=>"Harga","name"=>"harga"];
-			$this->col[] = ["label"=>"User Id","name"=>"user_id","join"=>"users,id"];
+			$this->col[] = ["label"=>"Petugas","name"=>"user_id","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -45,7 +45,7 @@
 			$this->form[] = ['label'=>'Jenis Kuda','name'=>'jenis_kuda','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Deskripsi','name'=>'deskripsi','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'User Id','name'=>'user_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'users,id'];
+			$this->form[] = ['label'=>'Petugas','name'=>'user_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'cms_users,name'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
