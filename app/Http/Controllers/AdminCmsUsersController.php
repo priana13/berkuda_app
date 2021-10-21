@@ -66,4 +66,10 @@ class AdminCmsUsersController extends CBController {
 	public function hook_before_add(&$postdata) {      
 	    unset($postdata['password_confirmation']);
 	}
+
+	public function hook_query_index(&$query) {
+
+		$query->where('id_cms_privileges','!=',1);
+	}
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 11 Okt 2021 pada 12.49
+-- Waktu pembuatan: 21 Okt 2021 pada 17.57
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.2
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `yukberkuda`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `slug` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `categories`
+--
+
+INSERT INTO `categories` (`id`, `category`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'history', 'history', '2021-10-21 08:53:35', '2021-10-21 15:53:35'),
+(2, 'event', 'event', '2021-10-21 08:53:50', '2021-10-21 15:53:50'),
+(3, 'Inspirasi', 'inspirasi', '2021-10-21 08:54:06', '2021-10-21 15:54:06');
 
 -- --------------------------------------------------------
 
@@ -189,7 +212,24 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `d
 (40, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/add-save', 'Add New Data Member at Menu Management', '', 1, '2021-10-11 03:46:19', NULL),
 (41, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/8', 'Update data Member at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>sorting</td><td></td><td></td></tr></tbody></table>', 1, '2021-10-11 03:46:36', NULL),
 (42, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@crudbooster.com logout', '', 1, '2021-10-11 03:47:24', NULL),
-(43, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@berkuda.com login with IP Address 127.0.0.1', '', 2, '2021-10-11 03:47:40', NULL);
+(43, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@berkuda.com login with IP Address 127.0.0.1', '', 2, '2021-10-11 03:47:40', NULL),
+(44, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@berkuda.com login with IP Address 127.0.0.1', '', 2, '2021-10-18 18:39:32', NULL),
+(45, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@berkuda.com login with IP Address 127.0.0.1', '', 2, '2021-10-19 07:52:40', NULL),
+(46, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/users/add-save', 'Add New Data ahmad at Users Management', '', 2, '2021-10-19 08:49:22', NULL),
+(47, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/transaksi/add-save', 'Add New Data  at Transaksi', '', 2, '2021-10-19 08:50:01', NULL),
+(48, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@berkuda.com logout', '', 2, '2021-10-19 08:58:58', NULL),
+(49, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@crudbooster.com login with IP Address 127.0.0.1', '', 1, '2021-10-19 08:59:39', NULL),
+(50, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/add-save', 'Add New Data Web at Menu Management', '', 1, '2021-10-19 09:04:05', NULL),
+(51, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@crudbooster.com logout', '', 1, '2021-10-19 09:09:46', NULL),
+(52, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@berkuda.com login with IP Address 127.0.0.1', '', 2, '2021-10-19 09:10:00', NULL),
+(53, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@crudbooster.com login with IP Address 127.0.0.1', '', 1, '2021-10-19 09:10:27', NULL),
+(54, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/10', 'Update data Posts at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>color</td><td></td><td>normal</td></tr><tr><td>parent_id</td><td>12</td><td></td></tr></tbody></table>', 1, '2021-10-19 09:10:42', NULL),
+(55, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/11', 'Update data Categories at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>color</td><td></td><td>normal</td></tr><tr><td>parent_id</td><td>12</td><td></td></tr><tr><td>sorting</td><td>2</td><td></td></tr></tbody></table>', 1, '2021-10-19 09:10:52', NULL),
+(56, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/9', 'Update data Page at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>color</td><td></td><td>normal</td></tr><tr><td>parent_id</td><td>12</td><td></td></tr><tr><td>sorting</td><td>3</td><td></td></tr></tbody></table>', 1, '2021-10-19 09:11:01', NULL),
+(57, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@berkuda.com login with IP Address 127.0.0.1', '', 2, '2021-10-21 08:52:08', NULL),
+(58, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/categories/add-save', 'Add New Data  at Categories', '', 2, '2021-10-21 08:53:35', NULL),
+(59, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/categories/add-save', 'Add New Data  at Categories', '', 2, '2021-10-21 08:53:50', NULL),
+(60, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36', 'http://127.0.0.1:8000/admin/categories/add-save', 'Add New Data  at Categories', '', 2, '2021-10-21 08:54:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -224,8 +264,12 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 (4, 'Slot Waktu', 'Route', 'AdminSlotWaktuControllerGetIndex', 'normal', 'fa fa-times', 7, 1, 0, 1, 2, '2021-09-29 02:16:31', '2021-09-29 02:28:56'),
 (5, 'Transaksi', 'Route', 'AdminTransaksiControllerGetIndex', 'normal', 'fa fa-retweet', 0, 1, 0, 1, 1, '2021-09-29 02:17:04', '2021-09-29 02:29:31'),
 (6, 'Jadwal', 'Route', 'AdminJadwalControllerGetIndex', 'normal', 'fa fa-hand-paper-o', 7, 1, 0, 1, 1, '2021-09-29 08:00:52', '2021-09-29 08:02:48'),
-(7, 'Config', 'Module', 'jadwal', 'normal', 'fa fa-gear', 0, 1, 0, 1, 6, '2021-09-29 08:04:34', NULL),
-(8, 'Member', 'Module', 'users', 'normal', 'fa fa-users', 0, 1, 0, 1, 5, '2021-10-11 03:46:19', '2021-10-11 03:46:36');
+(7, 'Config', 'Module', 'jadwal', 'normal', 'fa fa-gear', 0, 1, 0, 1, 7, '2021-09-29 08:04:34', NULL),
+(8, 'Member', 'Module', 'users', 'normal', 'fa fa-users', 0, 1, 0, 1, 5, '2021-10-11 03:46:19', '2021-10-11 03:46:36'),
+(9, 'Page', 'Route', 'AdminPageControllerGetIndex', 'normal', 'fa fa-paper-plane', 12, 1, 0, 1, 3, '2021-10-19 09:00:34', '2021-10-19 09:11:01'),
+(10, 'Posts', 'Route', 'AdminPostsControllerGetIndex', 'normal', 'fa fa-paperclip', 12, 1, 0, 1, 1, '2021-10-19 09:01:27', '2021-10-19 09:10:42'),
+(11, 'Categories', 'Route', 'AdminCategoriesControllerGetIndex', 'normal', 'fa fa-glass', 12, 1, 0, 1, 2, '2021-10-19 09:02:02', '2021-10-19 09:10:52'),
+(12, 'Web', 'Module', 'page', 'normal', 'fa fa-th-list', 0, 1, 0, 1, 6, '2021-10-19 09:04:05', NULL);
 
 -- --------------------------------------------------------
 
@@ -259,7 +303,15 @@ INSERT INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) V
 (20, 7, 2),
 (21, 7, 1),
 (23, 8, 2),
-(24, 8, 1);
+(24, 8, 1),
+(28, 12, 2),
+(29, 12, 1),
+(30, 10, 2),
+(31, 10, 1),
+(32, 11, 2),
+(33, 11, 1),
+(34, 9, 2),
+(35, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -302,7 +354,10 @@ INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controlle
 (14, 'Produk', 'fa fa-glass', 'produk', 'produk', 'AdminProdukController', 0, 0, '2021-09-29 02:15:58', NULL, NULL),
 (15, 'Slot Waktu', 'fa fa-times', 'slot_waktu', 'slot_waktu', 'AdminSlotWaktuController', 0, 0, '2021-09-29 02:16:31', NULL, NULL),
 (16, 'Transaksi', 'fa fa-repeat', 'transaksi', 'transaksi', 'AdminTransaksiController', 0, 0, '2021-09-29 02:17:04', NULL, NULL),
-(17, 'Jadwal', 'fa fa-hand-paper-o', 'jadwal', 'jadwal', 'AdminJadwalController', 0, 0, '2021-09-29 08:00:52', NULL, NULL);
+(17, 'Jadwal', 'fa fa-hand-paper-o', 'jadwal', 'jadwal', 'AdminJadwalController', 0, 0, '2021-09-29 08:00:52', NULL, NULL),
+(18, 'Page', 'fa fa-paper-plane', 'page', 'posts', 'AdminPageController', 0, 0, '2021-10-19 09:00:34', NULL, NULL),
+(19, 'Posts', 'fa fa-paperclip', 'posts', 'posts', 'AdminPostsController', 0, 0, '2021-10-19 09:01:27', NULL, NULL),
+(20, 'Categories', 'fa fa-glass', 'categories', 'categories', 'AdminCategoriesController', 0, 0, '2021-10-19 09:02:02', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -385,15 +440,21 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 (15, 1, 1, 1, 1, 1, 1, 15, NULL, NULL),
 (16, 1, 1, 1, 1, 1, 1, 16, NULL, NULL),
 (23, 1, 1, 1, 1, 1, 1, 17, NULL, NULL),
-(24, 1, 1, 1, 1, 1, 2, 17, NULL, NULL),
-(25, 1, 1, 1, 1, 1, 2, 12, NULL, NULL),
-(26, 1, 1, 1, 1, 1, 2, 13, NULL, NULL),
-(27, 1, 1, 1, 1, 1, 2, 14, NULL, NULL),
-(28, 1, 1, 1, 1, 1, 2, 15, NULL, NULL),
-(29, 1, 1, 1, 1, 1, 2, 16, NULL, NULL),
-(30, 1, 1, 1, 1, 1, 2, 4, NULL, NULL),
 (31, 1, 1, 1, 1, 0, 3, 17, NULL, NULL),
-(32, 1, 1, 1, 1, 0, 3, 16, NULL, NULL);
+(32, 1, 1, 1, 1, 0, 3, 16, NULL, NULL),
+(33, 1, 1, 1, 1, 1, 1, 18, NULL, NULL),
+(34, 1, 1, 1, 1, 1, 1, 19, NULL, NULL),
+(35, 1, 1, 1, 1, 1, 1, 20, NULL, NULL),
+(36, 1, 1, 1, 1, 1, 2, 20, NULL, NULL),
+(37, 1, 1, 1, 1, 1, 2, 17, NULL, NULL),
+(38, 1, 1, 1, 1, 1, 2, 12, NULL, NULL),
+(39, 1, 1, 1, 1, 1, 2, 18, NULL, NULL),
+(40, 1, 1, 1, 1, 1, 2, 13, NULL, NULL),
+(41, 1, 1, 1, 1, 1, 2, 19, NULL, NULL),
+(42, 1, 1, 1, 1, 1, 2, 14, NULL, NULL),
+(43, 1, 1, 1, 1, 1, 2, 15, NULL, NULL),
+(44, 1, 1, 1, 1, 1, 2, 16, NULL, NULL),
+(45, 1, 1, 1, 1, 1, 2, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -485,11 +546,11 @@ CREATE TABLE `cms_users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `status` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Customer',
   `hp` int(11) DEFAULT NULL,
   `kota` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alamat` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status_member` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+  `status_member` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Trial'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -498,7 +559,8 @@ CREATE TABLE `cms_users` (
 
 INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `created_at`, `updated_at`, `status`, `type`, `hp`, `kota`, `alamat`, `status_member`) VALUES
 (1, 'Super Admin', NULL, 'admin@crudbooster.com', '$2y$10$O.0YKs.5MM0V2am81fAow.QuMuZO9Di7Lr/8Xm3gZ/AQqYttRiZVW', 1, '2021-09-28 07:15:41', NULL, 'Active', '', NULL, NULL, NULL, ''),
-(2, 'Admin', 'uploads/1/2021-09/man_profile.jpg', 'admin@berkuda.com', '$2y$10$KULX76XjprunJNW2V5RGKuf8wg.thczHubxC81LxNjhlHXP.effeS', 2, '2021-09-29 02:22:00', NULL, NULL, '', NULL, NULL, NULL, '');
+(2, 'Admin', 'uploads/1/2021-09/man_profile.jpg', 'admin@berkuda.com', '$2y$10$KULX76XjprunJNW2V5RGKuf8wg.thczHubxC81LxNjhlHXP.effeS', 2, '2021-09-29 02:22:00', NULL, NULL, '', NULL, NULL, NULL, ''),
+(3, 'ahmad', 'uploads/2/2021-10/facebook_emage.jpg', 'ahmad@berkuda.com', '$2y$10$vg4umyD54dJNOIg5Bd2o7ubBUkFeCGMEFY5oVDZNy3CvrqGswKdVG', 3, '2021-10-19 08:49:22', NULL, NULL, 'Customer', NULL, NULL, NULL, 'Trial');
 
 -- --------------------------------------------------------
 
@@ -688,6 +750,25 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `slug` varchar(100) NOT NULL,
+  `body` text NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `cms_user_id` int(11) NOT NULL,
+  `image` varchar(200) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `produk`
 --
 
@@ -767,7 +848,8 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id`, `user_id`, `kode_transaksi`, `produk_id`, `qty`, `status_transaksi`, `disount`, `total`, `bukti_pembayaran`, `created_at`, `updated_at`) VALUES
 (1, 2, '11223', 2, 0, 'pending', 0, 75000, 'tseeesss', '2021-09-29 07:48:54', NULL),
-(2, 2, '61547ef3141f9', 1, 1, 'Pending', 0, 25000, NULL, '2021-09-29 07:57:55', NULL);
+(2, 2, '61547ef3141f9', 1, 1, 'Pending', 0, 25000, NULL, '2021-09-29 07:57:55', NULL),
+(3, 3, '616ee929950d2', 2, 1, 'Pending', NULL, 75000, NULL, '2021-10-19 08:50:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -793,6 +875,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `cms_apicustom`
@@ -946,6 +1034,14 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indeks untuk tabel `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_id` (`category_id`),
+  ADD KEY `cms_user_id` (`cms_user_id`);
+
+--
 -- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
@@ -985,6 +1081,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT untuk tabel `cms_apicustom`
 --
 ALTER TABLE `cms_apicustom`
@@ -1018,25 +1120,25 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT untuk tabel `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_menus`
 --
 ALTER TABLE `cms_menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_menus_privileges`
 --
 ALTER TABLE `cms_menus_privileges`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_moduls`
 --
 ALTER TABLE `cms_moduls`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_notifications`
@@ -1054,7 +1156,7 @@ ALTER TABLE `cms_privileges`
 -- AUTO_INCREMENT untuk tabel `cms_privileges_roles`
 --
 ALTER TABLE `cms_privileges_roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_settings`
@@ -1078,7 +1180,7 @@ ALTER TABLE `cms_statistic_components`
 -- AUTO_INCREMENT untuk tabel `cms_users`
 --
 ALTER TABLE `cms_users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -1123,6 +1225,12 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
@@ -1144,7 +1252,7 @@ ALTER TABLE `slot_waktu`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

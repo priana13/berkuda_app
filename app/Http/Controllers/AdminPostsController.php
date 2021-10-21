@@ -32,10 +32,8 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Title","name"=>"title"];
 			$this->col[] = ["label"=>"Slug","name"=>"slug"];
-			$this->col[] = ["label"=>"Body","name"=>"body"];
-			$this->col[] = ["label"=>"Type","name"=>"type"];
-			$this->col[] = ["label"=>"Category Id","name"=>"category_id","join"=>"categories,id"];
-			$this->col[] = ["label"=>"User Id","name"=>"cms_user_id","join"=>"cms_users,id"];
+			$this->col[] = ["label"=>"Category","name"=>"category_id","join"=>"categories,category"];
+			$this->col[] = ["label"=>"User","name"=>"cms_user_id","join"=>"cms_users,name"];
 			$this->col[] = ["label"=>"Image","name"=>"image","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -43,10 +41,10 @@
 			$this->form = [];
 			$this->form[] = ['label'=>'Title','name'=>'title','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
 			$this->form[] = ['label'=>'Slug','name'=>'slug','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Body','name'=>'body','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Type','name'=>'type','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Category Id','name'=>'category_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'categories,id'];
-			$this->form[] = ['label'=>'Cms User Id','name'=>'cms_user_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,id'];
+			$this->form[] = ['label'=>'Body','name'=>'body','type'=>'wysiwyg','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			// $this->form[] = ['label'=>'Type','name'=>'type','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Category','name'=>'category_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'categories,category'];
+			// $this->form[] = ['label'=>'Cms User Id','name'=>'cms_user_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,id'];
 			$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -245,7 +243,8 @@
 	    |
 	    */
 	    public function hook_query_index(&$query) {
-	        //Your code here
+
+			$query->where('posts.type','post');
 	            
 	    }
 
@@ -266,8 +265,10 @@
 	    | @arr
 	    |
 	    */
-	    public function hook_before_add(&$postdata) {        
-	        //Your code here
+	    public function hook_before_add(&$postdata) {   
+
+	        $postdata['type'] = 'post';
+			$postdata['cms_user_id'] = CRUDBooster::myId(); 
 
 	    }
 
