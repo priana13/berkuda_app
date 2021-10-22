@@ -81,7 +81,12 @@ class OrderController extends Controller
                 'total'  => $total
             ]);
 
+        $query =  http_build_query([
+            'phone' => '6289504932111',
+            'text' => 'Assalamualaikum, Saya mau pesan paket Berkuda : '.$product->nama_produk . ' untuk ' . $request->jumlah . ' Orang'
+        ]);
 
-        return 'oke, transaksi berhasil. berikutnya redirect ke whatsapp';
+
+        return redirect('https://api.whatsapp.com/send?' . $query);
     }
 }
