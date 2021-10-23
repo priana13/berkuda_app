@@ -67,12 +67,12 @@
     
                 <nav class="navbar navbar-expand-lg  bg-white mt-3 p-4 text-uppercase justify-content-center">
 
-                    <a class="navbar-brand ml-2" href="#">
+                    <a class="navbar-brand ml-2" href="{{route('home')}}">
                       Logo                      
                     </a>
                  
                     <div class="nav-item">
-                      <a class="nav-link active" style="color:#000;" aria-current="page" href="#">Home</a>
+                      <a class="nav-link active" style="color:#000;" aria-current="page" href="{{route('home')}}">Home</a>
                     </div>
 
                     <div class="nav-item">
