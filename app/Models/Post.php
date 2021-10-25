@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    public function scopePost($query){
+
+        return $query->where('type','post');
+
+    }
+
+    public function scopePage($query){
+
+        return $query->where('type','page');
+        
+    }
 }

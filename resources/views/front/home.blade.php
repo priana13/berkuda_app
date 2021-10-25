@@ -185,18 +185,26 @@
     <h4>LATEST NEWS</h4>
   </div>
 
+  @foreach($stories as $story)
   <!-- list card kecil -->
   <div class="row mt-1">
     <div class="col-md-4">
         <img src="{{asset('uploads/img/h1-single-img-1.jpg')}}" alt="" width="110" height="67">
     </div>
     <div class="col-md-8">
-      <p>Jalan-santai di pinggir Sungai</p>
-      <p>9 Okt 2021</p>
+      <p> <a class="text-decoration-none" href="{{route('post.show',$story->slug)}}">{{$story->title}} </a> <br>
+
+        <span class="text text-success"><em>{{$story->created_at->diffForHumans()}}</em></span>
+        
+      
+      </p>
+      <p></p>
     </div>
   </div>
 
-  <!-- list card kecil -->
+  @endforeach
+
+  {{-- <!-- list card kecil -->
   <div class="row mt-1">
     <div class="col-md-4">
         <img src="{{asset('uploads/img/h1-single-img-1.jpg')}}" alt="" width="110" height="67">
@@ -227,7 +235,7 @@
       <p>Ajarkan anak-anak keberanian menaiki kuda</p>
       <p>9 Okt 2021</p>
     </div>
-  </div>
+  </div> --}}
 
   </div>
   </div>
