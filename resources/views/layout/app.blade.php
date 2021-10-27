@@ -13,6 +13,30 @@
 
     <style>
 
+      @media only screen and (max-width: 2000px) {
+
+      .nav-mobile{
+        display:none;
+      }
+
+     @media only screen and (max-width: 800px) {
+
+      .nav-mobile{
+        display:block;
+      }
+
+      .tombol-slider{
+        margin-left: 5px;
+      }
+      .carousel-control-prev , .carousel-control-next{
+        display:none;
+      }
+      
+      .navbar-utama{
+        display:none;
+      }
+     }
+
       body{
         font-family: Lora,serif;
         font-size: 15px;
@@ -65,7 +89,7 @@
         <div class="container">
             <div class="row">
     
-                <nav class="navbar navbar-expand-lg  bg-white mt-3 p-4 text-uppercase justify-content-center">
+                <nav class="navbar navbar-utama navbar-expand-lg  bg-white mt-3 p-4 text-uppercase justify-content-center">
 
                     <a class="navbar-brand ml-2" href="{{route('home')}}">
                       Logo                      
@@ -87,12 +111,32 @@
                       <a class="nav-link" style="color:#000;" href="{{url('/page/kontak')}}">Contact</a>
                     </div>
 
-                    <!-- <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
-
                 </nav> 
+
+                <div class="nav-mobile">
+                  <nav class="navbar navbar-dark bg-warning">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-mobile" aria-controls="nav-mobile" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </div>
+                  </nav>
+  
+                  <div class="collapse" id="nav-mobile">
+                    <div class="bg-light p-4">
+                        <ul class="nav dropdown">
+                          <li class="dropdown-item">Home</li>
+                          <li class="dropdown-item">About</li>
+                          <li class="dropdown-item">Paket</li>
+                          <li class="dropdown-item">Kontak</li>
+                        </ul>
+  
+                    </div>
+                  </div>
+
+                </div>
+
+
     
             </div> 
             <!-- akhir row nav -->
