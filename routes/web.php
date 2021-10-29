@@ -22,7 +22,7 @@ use App\Http\Controllers\Front\ProductController;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 
-Route::get('/produk/{id}',[ProductController::class,'show'])->name('product.show');
+Route::get('/paket/{id}',[ProductController::class,'show'])->name('product.show');
 
 Route::post('/order', [OrderController::class,'store'])->name('order');
 

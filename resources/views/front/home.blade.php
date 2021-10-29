@@ -19,8 +19,8 @@
             
                 <div class="d-flex justify-content-center">
                   
-                  <a class="btn btn-lg btn-warning me-md-2 text-white tombol-slider"  href="">SELENGKAPNYA</a>
-                  <a class="btn btn-lg btn-outline-warning text-white tombol-slider"  href="">BOOKING</a>
+                  <a class="btn btn-lg btn-warning me-md-2 text-white tombol-slider"  href="/page/about">SELENGKAPNYA</a>
+                  <a class="btn btn-lg btn-outline-warning text-white tombol-slider"  href="{{route('product.show',2)}}">BOOKING</a>
 
               </div>
 

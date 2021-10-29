@@ -7,7 +7,7 @@
       <div class="carousel slide" style="height:150px;">
 
           <div class="carousel-item active p-5 ">
-              <h5 class="fs-1 text-center text-white text-uppercase" >PRODUCT</h5> 
+              <h5 class="fs-1 text-center text-white text-uppercase" >PAKET</h5> 
           </div>
       </div>
       

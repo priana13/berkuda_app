@@ -69,7 +69,7 @@
 
       footer {
         background-color:#171615;
-        height:200px;
+        /* height:200px; */
       }
 
       .harga-asli{
