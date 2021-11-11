@@ -125,10 +125,12 @@
                   <div class="collapse" id="nav-mobile">
                     <div class="bg-light p-4">
                         <ul class="nav dropdown">
-                          <li class="dropdown-item">Home</li>
-                          <li class="dropdown-item">About</li>
-                          <li class="dropdown-item">Paket</li>
-                          <li class="dropdown-item">Kontak</li>
+                          <li class="dropdown-item">
+                            <a class="nav-link active" style="color:#000;" aria-current="page" href="{{route('home')}}">Home</a>
+                          </li>
+                          <li class="dropdown-item"> <a class="nav-link" style="color:#000;" href="{{url('/page/about')}}">About</a></li>
+                          <li class="dropdown-item"><a class="nav-link" style="color:#000;" href="#">Paket</a></li>
+                          <li class="dropdown-item"><a class="nav-link" style="color:#000;" href="{{url('/page/kontak')}}">Contact</a></li>
                         </ul>
   
                     </div>
