@@ -15,7 +15,9 @@ class PostController extends Controller
         return view('front.post',compact('posts'));
     }
 
-    public function show(Post $post){
+    public function show($slug){
+
+        $post = Post::where('slug',$slug)->first();
 
         return view('front.post',compact('post'));
     }

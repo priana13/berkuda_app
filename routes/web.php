@@ -26,5 +26,5 @@ Route::get('/paket/{id}',[ProductController::class,'show'])->name('product.show'
 
 Route::post('/order', [OrderController::class,'store'])->name('order');
 
-Route::get('/page/{post:slug}',[PageController::class,'show'])->name('page.show');
-Route::get('/post/{post:slug}',[PostController::class,'show'])->name('post.show');
+Route::get('/page/{slug}',[PageController::class,'show'])->name('page.show');
+Route::get('/post/{slug}',[PostController::class,'show'])->name('post.show');
