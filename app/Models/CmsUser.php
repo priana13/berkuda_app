@@ -13,4 +13,9 @@ class CmsUser extends Model
 
     protected $guarded = [];
 
+    public function scopeCustomer($query){
+        
+        return $query->where('type','Customer');
+    }
+
 }
