@@ -39,10 +39,24 @@
 
 		public function getIndex(){
 
+			$list_bulan = [1,2,3,4,5,6,7,8,9,10,11,12];
+
 			$data['member'] = CmsUser::customer()->count();
 			$data['transaksi'] = Transaksi::count();
 			$data['nominal'] = Transaksi::sum('total');
+			$transaksi_group_bulan = Transaksi::groupBulan()->get();
 
+			
+
+			foreach($list_bulan as $bulan){
+				$data_transaksi = $transaksi_group_bulan->where('bulan',$bulan)->first();				
+				if(is_null($data_transaksi->qty)){$qty=0;}else{$qty=$data_transaksi->qty;}
+
+				$grafik_transaksi[] = $qty;
+			}
+
+			$data['grafik_transaksi'] = $grafik_transaksi;
+			
 			return view('admin.dashboard',$data);
 		}
 
