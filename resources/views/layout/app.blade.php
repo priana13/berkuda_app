@@ -155,12 +155,12 @@
       <div class="container pt-5">
         <div class="row text-white">
 
-            <div class="col-md-4">
+            <div class="col-md-5">
               <h3>OUR STORY</h3>
-              <p>Donec sodales sagittis magna. Sed conse quat, leo eget bibendum sodales, augue velit cursus nunc. Aenean commodo ligu sodales parturient montes.</p>
+              <p>“Bergaul dengan kuda menciptakan keberanian, ketegasan, sikap kecepatan dalam mengambil keputusan,”</p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <h4>MEDIA SOSIAL</h4>
               <ul>
                 <li>Facebook</li>
@@ -169,11 +169,16 @@
               </ul>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <h4>Lokasi</h4>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quisquam tenet</p>
-              map here
-            </div>
+              <p>Jl. Kuda No 01 Desa..</p>
+             
+              <h4>Member</h4>
+                <ul>
+                  <li><a href="/admin/login">Login</a></li>  
+                </ul>
+
+            </div>          
 
 
         </div>
@@ -181,11 +186,6 @@
 
 
     </footer>
-
-
-
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->
