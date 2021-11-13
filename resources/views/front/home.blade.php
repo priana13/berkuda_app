@@ -100,7 +100,7 @@
   @foreach($products as $product)
 
     <div class="card m-2 bg-white" style="width: 18rem; border:0px;">
-      <img src="{{asset('uploads/img/h1-single-img-1.jpg')}}" class="card-img-top" alt="{{$product->nama_produk}}">
+      <img src="{{$product->image}}" class="card-img-top img-fluid" alt="{{$product->nama_produk}}">
       <div class="card-body">
         <h5 class="card-title">{{$product->nama_produk}}</h5>
         <h2>Rp. {{$product->harga}}</h2>

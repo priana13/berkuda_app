@@ -10,4 +10,9 @@ class Product extends Model
     // use HasFactory;
 
     protected $table = 'produk';
+
+    public function paket(){
+        
+        return $this->belongsTo(Paket::class,'paket_id');
+    }
 }

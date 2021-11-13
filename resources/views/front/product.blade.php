@@ -39,8 +39,8 @@
 
         <div class="row mb-4">
           
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/bdcWkTm9lNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+          {{-- <iframe width="100%" height="400" src="https://www.youtube.com/embed/bdcWkTm9lNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
+          <img src="/{{$product->image}}" class="img-fluid" alt="">
         </div>
 
 
@@ -85,7 +85,9 @@
       <div class="row mb-4">
         <h3>{{$product->nama_produk}}</h4>
 
-        <h6 clsss="h6">Category: <strong>Member</strong></h6>
+        <h6 clsss="h6">Category: <strong>{{$product->paket->nama}}</strong></h6>
+        <h6 clsss="h6">Pertemuan: <strong>{{$product->qty_pertemuan}}</strong> x</h6>
+
       </div>
 
       {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non voluptas expedita consequatur aliquam doloribus fugit quaerat porro magnam assumenda veritatis. Sequi perspiciatis ipsum possimus? At, assumenda qui? Minima, consequatur architecto.</p> --}}
