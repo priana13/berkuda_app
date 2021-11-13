@@ -92,7 +92,7 @@
                 <nav class="navbar navbar-utama navbar-expand-lg  bg-white mt-3 p-4 text-uppercase justify-content-center">
 
                     <a class="navbar-brand ml-2" href="{{route('home')}}">
-                      Logo                      
+                      <img src="{{CRUDBooster::getSetting('logo')}}" alt="" width="70">                      
                     </a>
                  
                     <div class="nav-item">

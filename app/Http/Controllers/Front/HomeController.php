@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Front;
 
 use App\Models\Post;
 use App\Models\Product;
+use CRUDBooster;
+
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
