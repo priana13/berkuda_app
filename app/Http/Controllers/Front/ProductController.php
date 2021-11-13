@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Product;
+use App\Models\Kuda;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,12 +26,20 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function kuda()
+    public function list_kuda()
     {
-        $data['products'] = Product::paginate(3);
+        $data['kuda'] = Kuda::dijual()->paginate(3);
 
-        return view('front.kuda',$data);
+        return view('front.list_kuda',$data);
     }
+
+    public function kuda($id)
+    {
+        $product = Kuda::find($id);
+
+        return view('front.kuda',compact('product'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

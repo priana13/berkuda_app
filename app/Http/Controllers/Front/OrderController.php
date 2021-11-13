@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Models\CmsUser;
 use App\Models\Product;
+use App\Models\Kuda;
 
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
@@ -54,8 +55,18 @@ class OrderController extends Controller
         //     'jumlah' => 'required'
         // ]);
 
-        $product = Product::find($request->get('produk_id'));
-        $total = $product->harga * $request->jumlah;
+        if($request->is_kuda){
+
+            $product = Kuda::find($request->get('kuda_id'));
+            $total = $product->harga;
+            $jumlah = 1;
+        }else{
+
+            $product = Product::find($request->get('produk_id'));
+            $total = $product->harga * $request->jumlah;
+            $jumlah = $request->jumlah;
+        }
+
         $hp = $this->no_hp($request->hp);
 
         $getuser = CmsUser::where('hp',$hp)->first();
@@ -77,15 +88,25 @@ class OrderController extends Controller
                 'user_id' => $user->id,
                 'kode_transaksi' => uniqid(),
                 'produk_id' => $request->produk_id,
-                'qty' => $request->jumlah,
+                'kuda_id' => $request->kuda_id,
+                'qty' => $jumlah,
                 'total'  => $total
             ]);
 
-        $query =  http_build_query([
-            'phone' => '6289504932111',
-            'text' => 'Assalamualaikum, Saya mau pesan paket Berkuda : '.$product->nama_produk . ' untuk ' . $request->jumlah . ' Orang'
-        ]);
 
+    if($request->is_kuda){
+        $query =  http_build_query([
+            'phone' => '6285776221088',
+            'text' => 'Assalamualaikum, Saya mau Pinang Kudanya yang: '.$product->nama_kuda 
+        ]);
+    }else{
+        $query =  http_build_query([
+            'phone' => '6285776221088',
+            'text' => 'Assalamualaikum, Saya mau pesan paket Berkuda : '.$product->nama_produk . ' untuk ' . $request->jumlah . ' Orang'
+
+        ]);
+ 
+    }
 
         return redirect('https://api.whatsapp.com/send?' . $query);
     }

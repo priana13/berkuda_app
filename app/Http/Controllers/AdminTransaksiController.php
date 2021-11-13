@@ -32,7 +32,8 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Pelanggan","name"=>"user_id","join"=>"cms_users,name"];
 			$this->col[] = ["label"=>"Kode Transaksi","name"=>"kode_transaksi"];
-			$this->col[] = ["label"=>"Produk Id","name"=>"produk_id","join"=>"produk,nama_produk"];
+			$this->col[] = ["label"=>"Produk","name"=>"produk_id","join"=>"produk,nama_produk"];
+			$this->col[] = ["label"=>"Kuda","name"=>"kuda_id","join"=>"kuda,nama_kuda"];
 			$this->col[] = ["label"=>"Status Transaksi","name"=>"status_transaksi"];
 			$this->col[] = ["label"=>"Disount","name"=>"disount"];
 			$this->col[] = ["label"=>"Total","name"=>"total"];

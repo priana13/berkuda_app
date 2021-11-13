@@ -24,7 +24,9 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::get('/paket/{id}',[ProductController::class,'show'])->name('product.show');
 Route::get('/paket',[ProductController::class,'index'])->name('product.index');
-Route::get('/kuda',[ProductController::class,'kuda'])->name('product.kuda');
+Route::get('/kuda',[ProductController::class,'list_kuda'])->name('kuda.list');
+Route::get('/kuda/{id}',[ProductController::class,'kuda'])->name('kuda.show');
+
 
 Route::post('/order', [OrderController::class,'store'])->name('order');
 
