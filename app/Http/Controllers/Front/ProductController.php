@@ -15,7 +15,21 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $data['products'] = Product::paginate(3);
+
+        return view('front.paket',$data);
+    }
+
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function kuda()
+    {
+        $data['products'] = Product::paginate(3);
+
+        return view('front.kuda',$data);
     }
 
     /**

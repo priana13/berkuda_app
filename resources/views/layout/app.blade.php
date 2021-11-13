@@ -104,8 +104,13 @@
                     </div>
 
                     <div class="nav-item">
-                      <a class="nav-link" style="color:#000;" href="#">Paket</a>
+                      <a class="nav-link" style="color:#000;" href="paket">Paket</a>
                     </div>
+
+                    <div class="nav-item">
+                      <a class="nav-link" style="color:#000;" href="kuda">Kuda</a>
+                    </div>
+
                     
                     <div class="nav-item">
                       <a class="nav-link" style="color:#000;" href="{{url('/page/kontak')}}">Contact</a>
@@ -129,7 +134,8 @@
                             <a class="nav-link active" style="color:#000;" aria-current="page" href="{{route('home')}}">Home</a>
                           </li>
                           <li class="dropdown-item"> <a class="nav-link" style="color:#000;" href="{{url('/page/about')}}">About</a></li>
-                          <li class="dropdown-item"><a class="nav-link" style="color:#000;" href="#">Paket</a></li>
+                          <li class="dropdown-item"><a class="nav-link" style="color:#000;" href="paket">Paket</a></li>
+                          <li class="dropdown-item"><a class="nav-link" style="color:#000;" href="kuda">Kuda</a></li>
                           <li class="dropdown-item"><a class="nav-link" style="color:#000;" href="{{url('/page/kontak')}}">Contact</a></li>
                         </ul>
   
