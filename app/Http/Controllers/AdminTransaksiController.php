@@ -30,6 +30,7 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
+			$this->col[] = ["label"=>"Tanggal","name"=>"created_at"];
 			$this->col[] = ["label"=>"Pelanggan","name"=>"user_id","join"=>"cms_users,name"];
 			$this->col[] = ["label"=>"Kode Transaksi","name"=>"kode_transaksi"];
 			$this->col[] = ["label"=>"Produk","name"=>"produk_id","join"=>"produk,nama_produk"];
@@ -45,10 +46,10 @@
 			$this->form[] = ['label'=>'Pelanggan','name'=>'user_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','datatable'=>'cms_users,name'];
 			$this->form[] = ['label'=>'Produk','name'=>'produk_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'produk,nama_produk'];
 			$this->form[] = ['label'=>'Qty','name'=>'qty','type'=>'number','validation'=>'required|min:1|max:255','width'=>'col-sm-2'];
-
+			$this->form[] = ['label'=>'Kuda','name'=>'kuda_id','type'=>'select2','validation'=>'min:1|max:255','width'=>'col-sm-10','datatable'=>'kuda,nama_kuda'];
 			$this->form[] = ['label'=>'Disount','name'=>'disount','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-2'];
 			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-3'];
-			$this->form[] = ['label'=>'Status Transaksi','name'=>'status_transaksi','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','dataenum' => 'Pending;Selesai;Batal'];
+			$this->form[] = ['label'=>'Status Transaksi','name'=>'status_transaksi','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','dataenum' => 'pending;Selesai;Batal'];
 
 			$this->form[] = ['label'=>'Bukti Pembayaran','name'=>'bukti_pembayaran','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
