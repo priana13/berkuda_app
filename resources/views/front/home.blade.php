@@ -20,7 +20,7 @@
                 <div class="d-flex justify-content-center">
                   
                   <a class="btn btn-lg btn-warning me-md-2 text-white tombol-slider"  href="/page/about">SELENGKAPNYA</a>
-                  <a class="btn btn-lg btn-outline-warning text-white tombol-slider"  href="{{route('product.show',2)}}">BOOKING</a>
+                  <a class="btn btn-lg btn-outline-warning text-white tombol-slider"  href="{{route('product.show',2)}}">DAFTAR</a>
 
               </div>
 
@@ -68,7 +68,7 @@
 
   <div class="" style="margin-top: 30px; margin-bottom: 5px;">
   <h2 class="text-center">YAKIN BERANI BERKUDA?</h2>
-  <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus eaque, sed at tempore veniam labore est quibusdam sit accusamus molestiae hic eum! Dolores modi atque enim accusantium veniam cupiditate rerum?</p>
+  <p class="text-center">Berkuda merupakah olah raga yang digemari oleh Rasululloh Sholallohu'alaihi wa sallam, akan tetapi hari ini olah raga ini mulai di tinggalkan oleh sebagian besar kaum muslimin. Yuk hidupkan kembali olah raga berkuda!</p>
 
   </div>
   <div class="bg-warning m-auto" style="width:30px;hight:1px;padding:1px;"></div>
@@ -104,8 +104,8 @@
       <div class="card-body">
         <h5 class="card-title">{{$product->nama_produk}}</h5>
         <h2>Rp. {{$product->harga}}</h2>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a class="btn btn-lg btn-outline-warning text-warning tombo-slider"  href="{{route('product.show',$product->id)}}">BOOKING</a>
+        <p class="card-text">{{$product->deskripsi}}</p>
+        <a class="btn btn-lg btn-outline-warning text-warning tombo-slider"  href="{{route('product.show',$product->id)}}">DAFTAR</a>
       </div>
     </div>
 
@@ -115,8 +115,8 @@
   <div class="card-body">
     <h5 class="card-title">MEMBER</h5>
     <h2>Rp. 300K</h2>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-lg btn-warning text-white tombo-slider">BOOKING</a>
+    <p class="card-text">{{$product->deskripsi}}</p>
+    <a href="#" class="btn btn-lg btn-warning text-white tombo-slider">DAFTAR</a>
   </div>
   </div>
 
@@ -125,8 +125,8 @@
   <div class="card-body">
     <h5 class="card-title">GROUP</h5>
     <h2>Rp. 100K/orang</h2>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-lg btn-outline-warning text-warning tombo-slider">BOOKING</a>
+    <p class="card-text">{{$product->deskripsi}}</p>
+    <a href="#" class="btn btn-lg btn-outline-warning text-warning tombo-slider">DAFTAR</a>
   </div>
   </div> --}}
 
@@ -150,7 +150,7 @@
     <h4 class="fs-1 text-center">Keutamaan Berkuda..</h4>
     <div class="bg-warning m-auto" style="width:30px;hight:1px;padding:1px;"></div>
 
-    <p class="text-center fs-5 mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque inventore saepe minus debitis ratione aliquid laboriosam perferendis quis fugit, minima natus aliquam autem! Quasi unde ut distinctio rem dolore labore?</p>
+    <p class="text-center fs-5 mt-3">”Ajarilah anak-anak kalian berkuda, berenang, dan memanah,” (HR Bukhari, Muslim).</p>
   </div>
 
   </div>

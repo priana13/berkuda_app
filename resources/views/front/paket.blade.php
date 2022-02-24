@@ -33,8 +33,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{$product->nama_produk}}</h5>
                 <h2>Rp. {{number_format($product->harga)}}</h2>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a class="btn btn-lg btn-outline-warning text-warning tombo-slider"  href="{{route('product.show',$product->id)}}">BOOKING</a>
+                <p class="card-text">{{$product->paket->nama}}</p>
+                <a class="btn btn-lg btn-outline-warning text-warning tombo-slider"  href="{{route('product.show',$product->id)}}">DAFTAR</a>
             </div>
             </div>
 

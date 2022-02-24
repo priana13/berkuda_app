@@ -60,19 +60,16 @@
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-desc-tab">
 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore iste earum, a accusantium obcaecati labore esse! Tenetur voluptatibus voluptatem optio vel. Veritatis voluptates, perspiciatis corporis facilis aliquam similique sapiente doloribus?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam blanditiis voluptas enim. Ullam assumenda, cum sint modi aperiam dolorum voluptas accusamus laborum nam, quae, officia tempore odit consequuntur et quod?</p>
+              <p>{{$product->deskripsi}}</p>
             </div>
             <div class="tab-pane fade" id="pills-rute" role="tabpanel" aria-labelledby="pills-rute-tab">
 
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ipsa necessitatibus ea reiciendis sed commodi voluptas libero repudiandae perferendis quis repellendus ab soluta esse numquam ex odit, nostrum dicta reprehenderit.</p>
+              <p></p>
 
             </div>
             <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
 
-              <ul>
-                <li>Review Peoples</li>
-              </ul>
+              
 
             </div>
           </div>
@@ -117,7 +114,7 @@
       </div>
 
           <div class="form-group">
-              <button class="btn btn-lg btn-warning me-md-2 text-white tombo-slider form-control" >BOOKING</button>
+              <button class="btn btn-lg btn-warning me-md-2 text-white tombo-slider form-control" >DAFTAR</button>
           </div>
 
       </form>
