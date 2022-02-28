@@ -39,6 +39,11 @@
             </div>
 
         @endforeach
+
+        <div class="m-4 d-flex justify-content-center">
+            <a href="?page=all" class ="btn btn-primary text-center">Tampilkan Semua</a>
+        </div>
+
     </div>
 </div>
 </section>

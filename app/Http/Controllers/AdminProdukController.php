@@ -20,8 +20,8 @@
 			$this->button_add = true;
 			$this->button_edit = true;
 			$this->button_delete = true;
-			$this->button_detail = true;
-			$this->button_show = true;
+			$this->button_detail = false;
+			$this->button_show = false;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
@@ -88,6 +88,7 @@
 	        | 
 	        */
 	        $this->addaction = array();
+			$this->addaction[] = ['label'=>'Lihat','url'=>url('paket/[id]'),'icon'=>'fa fa-eye','color'=>'warning', 'target' => '_blank'];
 
 
 	        /* 

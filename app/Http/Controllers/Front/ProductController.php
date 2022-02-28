@@ -16,7 +16,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data['products'] = Product::paginate(3);
+        if(request()->page=="all"){
+
+            $data['products'] = Product::all();
+        }else{
+
+            $data['products'] = Product::paginate(8);
+        }     
+
 
         return view('front.paket',$data);
     }
