@@ -96,21 +96,31 @@
       {{-- <div class="d-flex alhttps://placeimg.com/1000/400/techign-items-center">
            <p> <i class="fas fa-map-marker-alt"></i> <span class="text-secondary ml-1">Member</span> </p>
       </div> --}}
+      
 
       <form action="{{route('order')}}" class="form-inline" method="post">
           @csrf
           <input type="hidden" name="produk_id" value="{{$product->id}}">
 
           <div class="form-group">
-              <input type="text" name="nama" class="form-control mb-2 mr-2" placeholder="Nama" required>
-          </div>
+              <input type="text" name="nama" class="form-control mb-2 mr-2 @error('nama') is-invalid @enderror" placeholder="Nama" value="{{old('nama')}}">
+              <!-- @error('nama')
+                  <div class="alert alert-danger">{{ $message }}</div>
+              @enderror -->
+            </div>
 
           <div class="form-group">
-            <input type="text" name="hp" class="form-control mb-2 mr-2" placeholder="No Whatsapp" required>
+            <input type="text" name="hp" class="form-control mb-2 mr-2 @error('hp') is-invalid @enderror" placeholder="No Whatsapp" value="{{old('hp')}}">
+              <!-- @error('hp')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror -->
         </div>
 
         <div class="form-group">
-          <input type="number" name="jumlah" class="form-control mb-2 mr-2" placeholder="Jumlah Orang" required>
+          <input type="number" name="jumlah" class="form-control mb-2 mr-2 @error('jumlah') is-invalid @enderror" placeholder="Jumlah Orang" value="{{old('jumlah')}}">
+            <!-- @error('jumlah')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror -->
       </div>
 
           <div class="form-group">

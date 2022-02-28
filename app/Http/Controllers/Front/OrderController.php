@@ -51,7 +51,7 @@ class OrderController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'product_id' => 'required',
+            'produk_id' => 'required',
             'nama' => 'required',
             'hp' => 'required|numeric',
             'jumlah' => 'required'
