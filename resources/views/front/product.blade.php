@@ -102,15 +102,15 @@
           <input type="hidden" name="produk_id" value="{{$product->id}}">
 
           <div class="form-group">
-              <input type="text" name="nama" class="form-control mb-2 mr-2" placeholder="Nama">
+              <input type="text" name="nama" class="form-control mb-2 mr-2" placeholder="Nama" required>
           </div>
 
           <div class="form-group">
-            <input type="text" name="hp" class="form-control mb-2 mr-2" placeholder="No Whatsapp">
+            <input type="text" name="hp" class="form-control mb-2 mr-2" placeholder="No Whatsapp" required>
         </div>
 
         <div class="form-group">
-          <input type="number" name="jumlah" class="form-control mb-2 mr-2" placeholder="Jumlah Orang">
+          <input type="number" name="jumlah" class="form-control mb-2 mr-2" placeholder="Jumlah Orang" required>
       </div>
 
           <div class="form-group">

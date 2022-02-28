@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
+use Session;
 use App\Models\CmsUser;
 use App\Models\Product;
 use App\Models\Kuda;
+use CRUDBooster;
 
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
@@ -48,12 +50,12 @@ class OrderController extends Controller
 
     public function store(Request $request){
 
-        // $request->validate([
-        //     'product_id' => 'required',
-        //     'nama' => 'required',
-        //     'hp' => 'required|numeric',
-        //     'jumlah' => 'required'
-        // ]);
+        $request->validate([
+            'product_id' => 'required',
+            'nama' => 'required',
+            'hp' => 'required|numeric',
+            'jumlah' => 'required'
+        ]);
 
         if($request->is_kuda){
 
@@ -96,12 +98,12 @@ class OrderController extends Controller
 
     if($request->is_kuda){
         $query =  http_build_query([
-            'phone' => '6285776221088',
+            'phone' => CRUDBooster::getSetting('whatsapp'),
             'text' => 'Assalamualaikum, Saya mau Pinang Kudanya yang: '.$product->nama_kuda 
         ]);
     }else{
         $query =  http_build_query([
-            'phone' => '6285776221088',
+            'phone' => CRUDBooster::getSetting('whatsapp'),
             'text' => 'Assalamualaikum, Saya mau pesan paket Berkuda : '.$product->nama_produk . ' untuk ' . $request->jumlah . ' Orang'
 
         ]);
