@@ -179,7 +179,7 @@
 
             <div class="col-md-3">
               <h4>Lokasi</h4>
-              <p>Jl. Kuda No 01 Desa..</p>
+              <p>{{app()->make('alamat')}}</p>
              
               <h4>Member</h4>
                 <ul>
