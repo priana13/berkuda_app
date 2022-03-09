@@ -147,16 +147,13 @@
 
     
             </div> 
-            <!-- akhir row nav -->
 
-            @yield('slider')
+            @yield("slider")
 
           </div>
         </div>
-        <!-- akhir header -->
 
-            @yield('content')
-
+            @yield("content")
 
 
     <footer>
@@ -183,7 +180,7 @@
              
               <h4>Member</h4>
                 <ul>
-                  <li><a href="/admin/login">Login</a></li>  
+                  <li><a class="btn btn-sm btn-default" href="/admin/login">Login</a></li>  
                 </ul>
 
             </div>          
