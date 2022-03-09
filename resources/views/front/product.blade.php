@@ -80,17 +80,33 @@
 
     <div class="col-md-5 ml-2">
       <div class="row mb-4">
+
         <h3>{{$product->nama_produk}}</h4>
 
-        <h6 clsss="h6">Category: <strong>{{$product->paket->nama}}</strong></h6>
-        <h6 clsss="h6">Pertemuan: <strong>{{$product->qty_pertemuan}}</strong> x</h6>
-
+        <div class="row">
+          <div class="form-group col-3">
+            Pilih Paket:
+          </div>
+            @foreach($product->paket as $row)
+              <button class="btn btn-sm bg-gray col-2" 
+              style="margin-right:3px;background-color:#c6c3b3;"
+              onclick="pilih_paket({{$row->id}});"
+              
+              >{{$row->nama}}</button>
+            @endforeach
+        </div> 
+        
       </div>
+
+  
+
+      <h6 clsss="h6">Pertemuan:  <strong> <span id="pertemuan">{{$product->qty_pertemuan}}</span></strong> x</h6>
+
 
       {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non voluptas expedita consequatur aliquam doloribus fugit quaerat porro magnam assumenda veritatis. Sequi perspiciatis ipsum possimus? At, assumenda qui? Minima, consequatur architecto.</p> --}}
 
 
-      <h1 class="d-flex align-items-center"> <i class="fas fa-tags mr-2 fs-3"></i>Rp. {{number_format($product->harga)}}</h1>
+      <h1 class="d-flex align-items-center" id="harga"> <i class="fas fa-tags mr-2 fs-3"></i>Rp. {{number_format($product->harga)}}</h1>
 
       <p> <span class="presentasi" >0%</span>  <span class="harga-asli">Rp. {{number_format($product->harga)}}</span> </p>
       {{-- <div class="d-flex alhttps://placeimg.com/1000/400/techign-items-center">
@@ -135,6 +151,34 @@
 
   </div>
   </section>
+
+
+  <script>
+
+        var paket = {!!json_encode($paket)!!}
+
+        function pilih_paket(id){
+
+          // console.log(paket)
+
+          $.each(paket,function(index , value){
+              console.log(value);
+
+              if(value.id == id){
+
+                $('#pertemuan').text(value.qty);
+
+              }
+          });
+
+ 
+          // var cari_paket = paket.find(element=>element > id);
+
+          // console.log(cari_paket);
+
+        }
+
+  </script>
 
 
 @endsection

@@ -13,6 +13,8 @@ class Product extends Model
 
     public function paket(){
         
-        return $this->belongsToMany(Paket::class,'produk_paket','paket_id','produk_id');
+        return $this->belongsToMany(Paket::class,'produk_paket','produk_id','paket_id');
     }
+
+    
 }
