@@ -60,7 +60,7 @@
           <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-desc" role="tabpanel" aria-labelledby="pills-desc-tab">
 
-              <p>{{$product->deskripsi}}</p>
+              <p>{!!$product->deskripsi!!}</p>
             </div>
             <div class="tab-pane fade" id="pills-rute" role="tabpanel" aria-labelledby="pills-rute-tab">
 
