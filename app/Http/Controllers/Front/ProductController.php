@@ -26,6 +26,7 @@ class ProductController extends Controller
             $data['products'] = Product::paginate(8);
         }     
 
+       
 
         return view('front.paket',$data);
     }

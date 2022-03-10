@@ -34,6 +34,7 @@
 			$this->col[] = ["label"=>"Pelanggan","name"=>"user_id","join"=>"cms_users,name"];
 			$this->col[] = ["label"=>"Kode Transaksi","name"=>"kode_transaksi"];
 			$this->col[] = ["label"=>"Produk","name"=>"produk_id","join"=>"produk,nama_produk"];
+			$this->col[] = ["label"=>"Paket","name"=>"paket_id","join"=>"paket,nama"];
 			$this->col[] = ["label"=>"Kuda","name"=>"kuda_id","join"=>"kuda,nama_kuda"];
 			$this->col[] = ["label"=>"Status Transaksi","name"=>"status_transaksi"];
 			$this->col[] = ["label"=>"Disount","name"=>"disount"];
@@ -45,6 +46,7 @@
 			$this->form = [];
 			$this->form[] = ['label'=>'Pelanggan','name'=>'user_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','datatable'=>'cms_users,name'];
 			$this->form[] = ['label'=>'Produk','name'=>'produk_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'produk,nama_produk'];
+			$this->form[] = ['label'=>'Paket','name'=>'paket_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-3','datatable'=>'paket,nama'];
 			$this->form[] = ['label'=>'Qty','name'=>'qty','type'=>'number','validation'=>'required|min:1|max:255','width'=>'col-sm-2'];
 			$this->form[] = ['label'=>'Kuda','name'=>'kuda_id','type'=>'select2','validation'=>'min:1|max:255','width'=>'col-sm-10','datatable'=>'kuda,nama_kuda'];
 			$this->form[] = ['label'=>'Disount','name'=>'disount','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-2'];
