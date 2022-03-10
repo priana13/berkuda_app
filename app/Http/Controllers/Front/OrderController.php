@@ -49,12 +49,14 @@ class OrderController extends Controller
 
 
     public function store(Request $request){
+      
 
         $request->validate([
             'produk_id' => 'required',
             'nama' => 'required',
             'hp' => 'required|numeric',
-            'jumlah' => 'required'
+            'jumlah' => 'required',
+            'paket' => 'required|numeric'
         ]);
 
         if($request->is_kuda){
@@ -90,6 +92,7 @@ class OrderController extends Controller
                 'user_id' => $user->id,
                 'kode_transaksi' => uniqid(),
                 'produk_id' => $request->produk_id,
+                'paket_id' => $request->paket,
                 'kuda_id' => $request->kuda_id,
                 'qty' => $jumlah,
                 'total'  => $total

@@ -80,17 +80,33 @@
 
     <div class="col-md-5 ml-2">
       <div class="row mb-4">
+
         <h3>{{$product->nama_produk}}</h4>
 
-        <h6 clsss="h6">Category: <strong>{{$product->paket->nama}}</strong></h6>
-        <h6 clsss="h6">Pertemuan: <strong>{{$product->qty_pertemuan}}</strong> x</h6>
-
+        <div class="row">
+          <div class="form-group col-3">
+            Pilih Paket:
+          </div>
+            @foreach($product->paket as $row)
+              <button class="btn btn-sm bg-gray col-2" 
+              style="margin-right:3px;background-color:#c6c3b3;"
+              onclick="pilih_paket({{$row->id}});"
+              
+              >{{$row->nama}}</button>
+            @endforeach
+        </div> 
+        
       </div>
+
+  
+      <h6 clsss="h6">Paket Terpilih:  <strong> <span id="paket_terpilih">-</span></strong></h6>
+      <h6 clsss="h6">Pertemuan:  <strong> <span id="pertemuan">{{$product->qty_pertemuan}}</span></strong> x</h6>
+
 
       {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non voluptas expedita consequatur aliquam doloribus fugit quaerat porro magnam assumenda veritatis. Sequi perspiciatis ipsum possimus? At, assumenda qui? Minima, consequatur architecto.</p> --}}
 
 
-      <h1 class="d-flex align-items-center"> <i class="fas fa-tags mr-2 fs-3"></i>Rp. {{number_format($product->harga)}}</h1>
+      <h1 class="d-flex align-items-center"> <i class="fas fa-tags mr-2 fs-3"></i>Rp. <span id="harga">{{number_format($product->harga)}}</span></h1>
 
       <p> <span class="presentasi" >0%</span>  <span class="harga-asli">Rp. {{number_format($product->harga)}}</span> </p>
       {{-- <div class="d-flex alhttps://placeimg.com/1000/400/techign-items-center">
@@ -101,6 +117,7 @@
       <form action="{{route('order')}}" class="form-inline" method="post">
           @csrf
           <input type="hidden" name="produk_id" value="{{$product->id}}">
+          <input type="hidden" id="paketId" name="paket">
 
           <div class="form-group">
               <input type="text" name="nama" class="form-control mb-2 mr-2 @error('nama') is-invalid @enderror" placeholder="Nama" value="{{old('nama')}}">
@@ -124,7 +141,7 @@
       </div>
 
           <div class="form-group">
-              <button class="btn btn-lg btn-warning me-md-2 text-white tombo-slider form-control" >DAFTAR</button>
+              <button class="btn btn-lg btn-warning me-md-2 text-white tombo-slider form-control" id="daftar" onclick="validasi();">DAFTAR</button>
           </div>
 
       </form>
@@ -135,6 +152,46 @@
 
   </div>
   </section>
+
+
+  <script>
+
+        var paket = {!!json_encode($paket)!!}
+
+        function pilih_paket(id){
+
+          // console.log(paket)
+
+          $.each(paket,function(index , value){
+              console.log(value);
+
+              if(value.id == id){
+                  var harga = new Intl.NumberFormat().format(value.harga);
+                  // console.log(harga)
+                $('#pertemuan').text(value.qty);
+                $('#harga').text(harga);
+                $('#paketId').val(id);
+                $('#paket_terpilih').text(value.paket);
+
+              }
+          });
+
+ 
+          // var cari_paket = paket.find(element=>element > id);
+
+          // console.log(cari_paket);
+
+        }
+
+        function validasi(){
+         var paketId =  $('#paketId').val();
+          if(paketId == ''){
+            $('#daftar').event.preventDefalt();
+            alert('pilih paket terlebih dahulu');
+          }
+        }
+
+  </script>
 
 
 @endsection

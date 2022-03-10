@@ -7,6 +7,8 @@ use App\Models\Kuda;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Models\ProdukPaket;
+
 class ProductController extends Controller
 {
     /**
@@ -24,6 +26,7 @@ class ProductController extends Controller
             $data['products'] = Product::paginate(8);
         }     
 
+       
 
         return view('front.paket',$data);
     }
@@ -79,7 +82,23 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        return view('front.product',compact('product'));
+        $produk_paket = ProdukPaket::where('produk_id',$id)->get();
+
+        if($produk_paket != null){
+
+            foreach($produk_paket as $row){
+               
+                $paket[] = [
+                    "id" => $row->paket_id,
+                    "paket" => $row->paket->nama,
+                    "harga" => $row->harga,
+                    "qty" => $row->qty_pertemuan
+                ];
+            }
+      
+        }
+
+        return view('front.product',compact('product', 'paket'));
     }
 
     /**

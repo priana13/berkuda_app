@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use App\Models\ProdukPaket;
 
 	class AdminProdukController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -31,10 +32,44 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Nama Produk","name"=>"nama_produk"];
-			$this->col[] = ["label"=>"Harga","name"=>"harga"];
+
 			// $this->col[] = ["label"=>"Deskripsi","name"=>"deskripsi"];
-			$this->col[] = ["label"=>"Nama Paket","name"=>"paket_id",'join'=>'paket,nama'];
-			$this->col[] = ["label"=>"Qty Pertemuan","name"=>"qty_pertemuan"];
+			$this->col[] = ["label"=>"Paket","name"=>"paket_id",'join'=>'paket,nama',"callback" => function($row){
+				$paket = ProdukPaket::where('produk_id',$row->id)->get();
+				
+				$list = "";
+				$i = 0;
+				foreach ($paket as $raw){
+					$i++;
+
+					if($i==count($paket)){
+						$list .= $raw->paket->nama ;
+					}else{
+						$list .= $raw->paket->nama . ' , ';
+					}
+
+				}
+
+				return $list;
+			}];
+			$this->col[] = ["label"=>"Harga","name"=>"paket_id","callback" => function($row){
+				$paket = ProdukPaket::where('produk_id',$row->id)->get();
+				
+				$list = "";
+				$i=0;
+				foreach ($paket as $raw){
+					$i++;
+					if($i == count($paket)){
+						$list .= number_format($raw->harga);
+					}else{
+						$list .= number_format($raw->harga) . ' , ';
+					}
+					
+				}
+
+				return $list;
+			}];
+			// $this->col[] = ["label"=>"Qty Pertemuan","name"=>"qty_pertemuan"];
 			// $this->col[] = ["label"=>"Type","name"=>"type"];
 			$this->col[] = ["label"=>"Image","name"=>"image","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -42,10 +77,10 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nama Produk','name'=>'nama_produk','type'=>'text','validation'=>'required|string|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'text','validation'=>'required|numeric','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Deskripsi','name'=>'deskripsi','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Nama Paket','name'=>'paket_id','type'=>'select2','validation'=>'required|integer|min:1|max:255','width'=>'col-sm-10','datatable'=> 'paket,nama'];
-			$this->form[] = ['label'=>'Qty Pertemuan','name'=>'qty_pertemuan','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			// $this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'text','validation'=>'required|numeric','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Deskripsi','name'=>'deskripsi','type'=>'wysiwyg','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			// $this->form[] = ['label'=>'Nama Paket','name'=>'paket_id','type'=>'select2','validation'=>'required|integer|min:1|max:255','width'=>'col-sm-10','datatable'=> 'paket,nama'];
+			// $this->form[] = ['label'=>'Qty Pertemuan','name'=>'qty_pertemuan','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			// $this->form[] = ['label'=>'Type','name'=>'type','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
 			# END FORM DO NOT REMOVE THIS LINE
@@ -60,6 +95,11 @@
 			//$this->form[] = ["label"=>"Type","name"=>"type","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			//$this->form[] = ["label"=>"Image","name"=>"image","type"=>"upload","required"=>TRUE,"validation"=>"required|image|max:3000","help"=>"File types support : JPG, JPEG, PNG, GIF, BMP"];
 			# OLD END FORM
+
+			$columns[] = ['label'=>'Paket','name'=>'paket_id','type'=>'select','required'=>true, 'datatable' => 'paket,nama'];
+			$columns[] = ['label'=>'Qty Pertemuan','name'=>'qty_pertemuan','type'=>'number','required'=>true];
+			$columns[] = ['label'=>'Harga','name'=>'harga','type'=>'number','required'=>true];
+			$this->form[] = ['label'=>'Pilihan Paket','name'=>'produk_paket','type'=>'child','columns'=>$columns,'table'=>'produk_paket','foreign_key'=>'produk_id'];
 
 			/* 
 	        | ---------------------------------------------------------------------- 
