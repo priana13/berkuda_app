@@ -100,15 +100,15 @@
 
   
       <h6 clsss="h6">Paket Terpilih:  <strong> <span id="paket_terpilih">-</span></strong></h6>
-      <h6 clsss="h6">Pertemuan:  <strong> <span id="pertemuan">{{$product->qty_pertemuan}}</span></strong> x</h6>
+      <h6 clsss="h6">Pertemuan:  <strong> <span id="pertemuan">{{$product_selected['qty']}}</span></strong> x</h6>
 
 
       {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non voluptas expedita consequatur aliquam doloribus fugit quaerat porro magnam assumenda veritatis. Sequi perspiciatis ipsum possimus? At, assumenda qui? Minima, consequatur architecto.</p> --}}
 
 
-      <h1 class="d-flex align-items-center"> <i class="fas fa-tags mr-2 fs-3"></i>Rp. <span id="harga">{{number_format($product->harga)}}</span></h1>
+      <h1 class="d-flex align-items-center"> <i class="fas fa-tags mr-2 fs-3"></i>Rp. <span id="harga">{{number_format($product_selected['harga'])}}</span></h1>
 
-      <p> <span class="presentasi" >0%</span>  <span class="harga-asli">Rp. {{number_format($product->harga)}}</span> </p>
+      <p> <span class="presentasi" >0%</span>  <span class="harga-asli">Rp. {{number_format($product_selected['harga'])}}</span> </p>
       {{-- <div class="d-flex alhttps://placeimg.com/1000/400/techign-items-center">
            <p> <i class="fas fa-map-marker-alt"></i> <span class="text-secondary ml-1">Member</span> </p>
       </div> --}}

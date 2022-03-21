@@ -104,7 +104,7 @@
       <div class="card-body">
         <h5 class="card-title">{{$product->nama_produk}}</h5>
         <h2>Rp. {{$product->harga}}</h2>
-        <p class="card-text">{{$product->deskripsi}}</p>
+        <p class="card-text">{!!$product->deskripsi!!}</p>
         <a class="btn btn-lg btn-outline-warning text-warning tombo-slider"  href="{{route('product.show',$product->id)}}">DAFTAR</a>
       </div>
     </div>
@@ -115,7 +115,7 @@
   <div class="card-body">
     <h5 class="card-title">MEMBER</h5>
     <h2>Rp. 300K</h2>
-    <p class="card-text">{{$product->deskripsi}}</p>
+    <p class="card-text">{!!$product->deskripsi!!}</p>
     <a href="#" class="btn btn-lg btn-warning text-white tombo-slider">DAFTAR</a>
   </div>
   </div>

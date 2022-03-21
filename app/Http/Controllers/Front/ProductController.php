@@ -98,7 +98,9 @@ class ProductController extends Controller
       
         }
 
-        return view('front.product',compact('product', 'paket'));
+        $product_selected = collect($paket)->first();
+
+        return view('front.product',compact('product', 'paket' , 'product_selected'));
     }
 
     /**
