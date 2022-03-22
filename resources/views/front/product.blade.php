@@ -99,7 +99,7 @@
       </div>
 
   
-      <h6 clsss="h6">Paket Terpilih:  <strong> <span id="paket_terpilih">-</span></strong></h6>
+      <h6 clsss="h6">Paket Terpilih:  <strong> <span id="paket_terpilih">{{$product_selected['paket']}}</span></strong></h6>
       <h6 clsss="h6">Pertemuan:  <strong> <span id="pertemuan">{{$product_selected['qty']}}</span></strong> x</h6>
 
 
@@ -117,7 +117,7 @@
       <form action="{{route('order')}}" class="form-inline" method="post">
           @csrf
           <input type="hidden" name="produk_id" value="{{$product->id}}">
-          <input type="hidden" id="paketId" name="paket">
+          <input type="hidden" id="paketId" name="paket" value="{{$product_selected['id']}}">
 
           <div class="form-group">
               <input type="text" name="nama" class="form-control mb-2 mr-2 @error('nama') is-invalid @enderror" placeholder="Nama" value="{{old('nama')}}">
